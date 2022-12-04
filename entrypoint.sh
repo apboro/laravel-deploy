@@ -5,7 +5,8 @@ SSH_HOST=$2
 SSH_PORT=$3
 PATH_SOURCE=$4
 OWNER=$5
-
+echo 'Kuku'
+echo $DEPLOY_KEY
 mkdir -p /root/.ssh
 ssh-keyscan -H "$SSH_HOST" >> /root/.ssh/known_hosts
 
