@@ -28,13 +28,11 @@ jobs:
             -   name: Setup Enviroment
                 uses: shivammathur/setup-php@v2
                 with:
-                    php-version: '7.4'
-            -   name: Speed up the packages installation process
-                run: composer global require hirak/prestissimo
+                    php-version: '8.1'
             -   name: Install Packages
                 run: composer install --no-dev
             -   name: Deploy to Server
-                uses: ngocquyhoang/deploy@laravel
+                uses: apboro/deploy@laravel
                 with:
                     user: user
                     host: host
