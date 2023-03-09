@@ -8,7 +8,7 @@ OWNER=$5
 echo 'Kuku'
 mkdir -p /root/.ssh
 ssh-keyscan -H "$SSH_HOST" >> /root/.ssh/known_hosts
-
+printf '%b\n' "$DEPLOY_KEY"
 if [ -z "$DEPLOY_KEY" ];
 then
 	echo $'\n' "------ DEPLOY KEY NOT SET YET! ----------------" $'\n'
