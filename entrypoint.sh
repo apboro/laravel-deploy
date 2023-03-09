@@ -6,7 +6,6 @@ SSH_PORT=$3
 PATH_SOURCE=$4
 OWNER=$5
 echo 'Kuku'
-echo $DEPLOY_KEY
 mkdir -p /root/.ssh
 ssh-keyscan -H "$SSH_HOST" >> /root/.ssh/known_hosts
 
@@ -16,6 +15,8 @@ then
 	exit 1
 else
 	printf '%b\n' "$DEPLOY_KEY" > /root/.ssh/id_rsa
+	echo 'an the key is '
+	echo /root/.ssh/id_rsa
 	chmod 400 /root/.ssh/id_rsa
 
 	echo $'\n' "------ CONFIG SUCCESSFUL! ---------------------" $'\n'
