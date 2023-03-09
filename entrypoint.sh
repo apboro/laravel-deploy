@@ -8,15 +8,13 @@ OWNER=$5
 echo 'Kuku'
 mkdir -p /root/.ssh
 ssh-keyscan -H "$SSH_HOST" >> /root/.ssh/known_hosts
-printf '%b\n' "$DEPLOY_KEY"
+
 if [ -z "$DEPLOY_KEY" ];
 then
 	echo $'\n' "------ DEPLOY KEY NOT SET YET! ----------------" $'\n'
 	exit 1
 else
-	printf "$DEPLOY_KEY" > /root/.ssh/id_rsa
-	echo 'and the key is '
-	cat /root/.ssh/id_rsa
+	printf '%b\n' "$DEPLOY_KEY" > /root/.ssh/id_rsa
 	chmod 400 /root/.ssh/id_rsa
 
 	echo $'\n' "------ CONFIG SUCCESSFUL! ---------------------" $'\n'
