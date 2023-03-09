@@ -15,8 +15,8 @@ then
 	exit 1
 else
 	printf '%b\n' "$DEPLOY_KEY" > /root/.ssh/id_rsa
-	echo 'an the key is '
-	echo /root/.ssh/id_rsa
+	echo 'and the key is '
+	printf /root/.ssh/id_rsa
 	chmod 400 /root/.ssh/id_rsa
 
 	echo $'\n' "------ CONFIG SUCCESSFUL! ---------------------" $'\n'
